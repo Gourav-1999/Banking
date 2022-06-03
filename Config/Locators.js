@@ -1,0 +1,22 @@
+module.exports = {
+    custLogin: '//*[text()="Customer Login"]',
+    userName: '//*[@name="userSelect"]',
+    loginBtn: '//*[text()="Login"]',
+    accName: '//*[@name="accountSelect"]',
+    data1: '//*[text()="Account Number : "]//strong[1]',
+    transButton: '(//*[@class ="btn btn-lg tab"])[1]',
+    deposButton: '(//*[@class ="btn btn-lg tab"])[2]',
+    depositAmount: '//*[text()="Amount to be Deposited :"]/..//child::input',
+    depotBtn: '//*[text()="Deposit"]',
+    withdrButton: '(//*[@class ="btn btn-lg tab"])[2]',
+    withdrawAmount: '//*[text()="Amount to be Withdrawn :"]/..//child::input',
+    withdraw: '//*[text()="Withdraw"]',
+    Msg: '//*[@class="error ng-binding"]',
+    backButton: '//*[text()="Back"]',
+    resetButton: '//*[text()="Reset"]',
+    transactionData: '(//table//tr)[2]',
+    logoutBtn: '//*[text()="Logout"]',
+    homeBtn: '//*[text()="Home"]',
+    transactionType1: '(//table//tr)[2]//td[3]',
+    transactionType2: '(//table//tr)[3]//td[3]'
+}
