@@ -13,4 +13,7 @@ module.exports = class Page {
     wait(){
         return browser.pause(10000);
     }
+    accept_alert(){
+        return browser.acceptAlert();
+    }
 }

@@ -2,7 +2,7 @@ const Page = require('./page');
 var chai = require('chai');
 var assert = chai.assert;
 const Locators = require('../../Config/Locators')
-const Data = require('../../Config/Data')
+const CustomerData = require('../../Config/CustomerData');
 class customerLogin extends Page {
     get custLogin() {
         return $(Locators.custLogin)
@@ -71,15 +71,15 @@ class customerLogin extends Page {
         let items = await this.userName
         items.click();
 
-        await items.selectByVisibleText(Data.userName)
+        await items.selectByVisibleText(CustomerData.userName)
         await this.loginBtn.click();
 
         let acc = await this.accName
         acc.click();
-        await acc.selectByVisibleText(Data.accountName)
+        await acc.selectByVisibleText(CustomerData.accountName)
 
         let data = await this.data1.getText()
-        assert.equal(data, Data.accountName)
+        assert.equal(data, CustomerData.accountName)
     }
     async Transaction() {
         await this.transButton.click();
@@ -98,14 +98,14 @@ class customerLogin extends Page {
     }
     async Withdraw() {
         await this.withdrButton.click();
-        await this.withdrawAmount.setValue(Data.withdrawAmt);
+        await this.withdrawAmount.setValue(CustomerData.withdrawAmt);
         await this.withdraw.click();
         let f = await this.Msg.getText();
         assert.equal(f, "Transaction successful")
     }
     async Deposit() {
         await this.deposButton.click()
-        await this.depositAmount.setValue(Data.depositAmt)
+        await this.depositAmount.setValue(CustomerData.depositAmt)
         await this.depotBtn.click();
         let m = await this.Msg.getText();
         assert.equal(m, "Deposit Successful")

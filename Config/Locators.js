@@ -1,4 +1,5 @@
 module.exports = {
+    //CustomerLogin Locators
     custLogin: '//*[text()="Customer Login"]',
     userName: '//*[@name="userSelect"]',
     loginBtn: '//*[text()="Login"]',
@@ -18,5 +19,20 @@ module.exports = {
     logoutBtn: '//*[text()="Logout"]',
     homeBtn: '//*[text()="Home"]',
     transactionType1: '(//table//tr)[2]//td[3]',
-    transactionType2: '(//table//tr)[3]//td[3]'
+    transactionType2: '(//table//tr)[3]//td[3]',
+    //ManagerLogin Locators
+    bankManagerLoginBtn: '//*[text()="Bank Manager Login"]',
+    addCustomerBtn: '//*[@ng-click="addCust()"]',
+    firstName: '//*[text()="First Name :"]//following-sibling::input',
+    lastName: '//*[text()="Last Name :"]//following-sibling::input',
+    postCode: '//*[text()="Post Code :"]//following-sibling::input',
+    customersBtn: '//*[@ng-click="showCust()"]',
+    searchCustomer: '//*[@placeholder="Search Customer"]',
+    customerNameData: '((//tr)[2]//td)[1]',
+    customerPostData: '((//tr)[2]//td)[3]',
+    deleteButton: '//*[text()="Delete"]',
+    openAccount: '//*[@ng-click="openAccount()"]',
+    clickSelectCustomer: '//*[@name="userSelect"]',
+    clickSelectCurrency: '//*[@name="currency"]',
+    processBtn: '//*[text()="Process"]'
 }
