@@ -64,6 +64,9 @@ class customerLogin extends Page {
     get transactionType2() {
         return $(Locators.transactionType2)
     }
+    get trans() {
+        return $(Locators.trans)
+    }
 
     async customerLoginTest() {
         await this.custLogin.click();
@@ -83,15 +86,20 @@ class customerLogin extends Page {
     }
     async Transaction() {
         await this.transButton.click();
-        let type1 = await this.transactionType1;
-        let type2 = await this.transactionType2;
-        if (type1.isDisplayed()) {
+        //  let type1 = await this.transactionType1;
+        //  let type2 = await this.transactionType2;
+        let type3 = await this.trans;
+        /*if (type1.isDisplayed()) {
             let dt1 = await this.transactionType1.getText();
             assert.equal(dt1, "Credit")
         }
         if (type2.isDisplayed()) {
             let dt2 = await this.transactionType2.getText();
             assert.equal(dt2, "Debit")
+        }*/
+        if (type3.isDisplayed()) {
+            let dt3 = await this.trans.getText();
+            assert.equal(dt3, "Date-Time Amount Transaction Type")
         }
         await this.resetButton.click();
         await this.backButton.click();
@@ -101,7 +109,15 @@ class customerLogin extends Page {
         await this.withdrawAmount.setValue(CustomerData.withdrawAmt);
         await this.withdraw.click();
         let f = await this.Msg.getText();
-        assert.equal(f, "Transaction successful")
+        var str1 = CustomerData.depositAmt;
+        var int1 = parseInt(str1)
+        var str2 = CustomerData.withdrawAmt;
+        var int2 = parseInt(str2)
+        if (int1 > int2) {
+            assert.equal(f, "Transaction successful")
+        } else {
+            assert.equal(f, "Transaction Failed. You can not withdraw amount more than the balance.")
+        }
     }
     async Deposit() {
         await this.deposButton.click()

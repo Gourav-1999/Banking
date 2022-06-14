@@ -20,6 +20,7 @@ module.exports = {
     homeBtn: '//*[text()="Home"]',
     transactionType1: '(//table//tr)[2]//td[3]',
     transactionType2: '(//table//tr)[3]//td[3]',
+    trans: '(//tr)[1]',
     //ManagerLogin Locators
     bankManagerLoginBtn: '//*[text()="Bank Manager Login"]',
     addCustomerBtn: '//*[@ng-click="addCust()"]',
